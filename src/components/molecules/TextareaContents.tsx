@@ -60,7 +60,7 @@ function TextareaContents({
         <Textarea
           id={id}
           value={value}
-          className={cx(className)}
+          className={cx('textarea', { 'auto-focus': autoFocus })}
           placeholder={placeholder}
           maxLength={maxLength}
           autoFocus={autoFocus}

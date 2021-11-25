@@ -2,35 +2,15 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './InputList.module.scss';
 
+import { TEXTAREA_LIST } from 'config/textarea';
+import { ITextareaData } from 'interface/textarea';
+
 import { TextareaContents } from 'components/molecules';
 
 const cx = classNames.bind(styles);
 
 const InputList = () => {
-  const [textareaList, setTextareaList] = useState([
-    {
-      id: '1',
-      value: '초기값이 있을 수 있습니다.',
-      placeholder: '입력',
-      maxLength: 500,
-      autoFocus: false,
-      isBtn: false,
-      onChange: (e) => {
-        setSelectedValue(e.target);
-      },
-    },
-    {
-      id: '2',
-      value: '입력중.. 또는 내용 변경 시',
-      placeholder: '입력',
-      maxLength: 500,
-      autoFocus: true,
-      isBtn: true,
-      onChange: (e) => {
-        setSelectedValue(e.target);
-      },
-    },
-  ]);
+  const [textareaList, setTextareaList] = useState<ITextareaData[]>(TEXTAREA_LIST);
 
   const setSelectedValue = ({ value, id }) => {
     const updateTextareaList = textareaList.map((data, key) => {
@@ -40,6 +20,10 @@ const InputList = () => {
     });
 
     setTextareaList(updateTextareaList);
+  };
+
+  const onChangeTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
+    setSelectedValue(e.target);
   };
 
   return (
@@ -54,8 +38,7 @@ const InputList = () => {
               placeholder={data?.placeholder}
               maxLength={data?.maxLength}
               autoFocus={data?.autoFocus}
-              onChange={data?.onChange}
-              className={cx('textarea')}
+              onChange={onChangeTextarea}
               isBtn={data?.isBtn}
             />
           );

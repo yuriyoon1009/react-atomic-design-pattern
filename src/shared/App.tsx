@@ -14,18 +14,15 @@ function App() {
   return (
     <div className={cx('app-container')}>
       <header className={cx('header-container')}>
-        {<Helmet>
-          <title>{'list'}</title>
-          <meta name="title" content={'title'} />
-          <meta name="subject" content={'subject'} />
-        </Helmet>}
+        {
+          <Helmet>
+            <title>{'list'}</title>
+            <meta name="title" content={'title'} />
+            <meta name="subject" content={'subject'} />
+          </Helmet>
+        }
       </header>
-      <aside>
-        {/* <SideBar/> */}
-      </aside>
-      <main className={cx('view-container')}>
-        {<Routes indexUrl={indexUrl}/>}
-      </main>
+      <main className={cx('view-container')}>{<Routes indexUrl={indexUrl} />}</main>
     </div>
   );
 }

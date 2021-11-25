@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface TTextareaProps {
   id?: string;
   className?: string;
@@ -5,7 +7,7 @@ interface TTextareaProps {
   placeholder?: string;
   maxLength?: number;
   autoFocus?: boolean;
-  onChange?: (e: any) => void;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 function Textarea({ id, value, placeholder, maxLength, autoFocus, className, onChange }: TTextareaProps) {

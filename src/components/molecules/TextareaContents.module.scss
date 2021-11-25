@@ -24,6 +24,10 @@
       border: 1px solid $deep_gray;
       border-radius: 5px;
       resize: none;
+
+      &.auto-focus {
+        border-color: $blue100;
+      }
     }
 
     .count-container {
