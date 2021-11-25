@@ -16,24 +16,29 @@ const CardList = () => {
   return (
     <div className={cx('card-list-container')}>
       {cardList.length > 0 &&
-        cardList.map((data, key) => {
-          return (
-            <Card
-              key={key}
-              src={data?.src}
-              alt={data?.label}
-              label={data?.label}
-              title={data?.title}
-              highlight={data?.highlight}
-              crossOut={data?.crossOut}
-              isCrossOut={data?.isCrossOut}
-              count={data?.cardCount}
-              text={data?.detail}
-              isMobile={data?.isMobile}
-              className={data?.className}
-            />
-          );
-        })}
+        cardList.map(
+          (
+            { src, label, title, highlight, isCrossOut, crossOut, cardCount, detail, isMobile, className }: ICardData,
+            key: number,
+          ): JSX.Element => {
+            return (
+              <Card
+                key={key}
+                src={src}
+                alt={label}
+                label={label}
+                title={title}
+                highlight={highlight}
+                crossOut={crossOut}
+                isCrossOut={isCrossOut}
+                count={cardCount}
+                text={detail}
+                isMobile={isMobile}
+                className={className}
+              />
+            );
+          },
+        )}
     </div>
   );
 };

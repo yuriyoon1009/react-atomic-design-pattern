@@ -28,6 +28,11 @@
       &.auto-focus {
         border-color: $blue100;
       }
+
+      &.disable {
+        background-color: $gray;
+        color: $deep_alive_orange70;
+      }
     }
 
     .count-container {

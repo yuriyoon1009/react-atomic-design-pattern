@@ -7,10 +7,11 @@ interface TTextareaProps {
   placeholder?: string;
   maxLength?: number;
   autoFocus?: boolean;
+  readOnly?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-function Textarea({ id, value, placeholder, maxLength, autoFocus, className, onChange }: TTextareaProps) {
+function Textarea({ id, value, placeholder, maxLength, autoFocus, className, readOnly, onChange }: TTextareaProps) {
   return (
     <textarea
       id={id}
@@ -18,6 +19,7 @@ function Textarea({ id, value, placeholder, maxLength, autoFocus, className, onC
       placeholder={placeholder}
       maxLength={maxLength}
       autoFocus={autoFocus}
+      readOnly={readOnly}
       {...(className && { className })}
       {...(onChange && { onChange })}
     />

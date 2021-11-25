@@ -16,17 +16,18 @@ interface TTextareaContentsProps {
   maxLength?: number;
   autoFocus?: boolean;
   isBtn?: boolean;
+  isReadOnly?: boolean;
   onChange?: (e: any) => void;
 }
 
 function TextareaContents({
   id,
   value,
-  className,
   placeholder,
   maxLength,
   autoFocus,
   isBtn,
+  isReadOnly,
   onChange,
 }: TTextareaContentsProps): JSX.Element {
   const [count, setCount] = useState<number>(maxLength);
@@ -41,7 +42,7 @@ function TextareaContents({
   }, [value, prevValue, initValue, setInitValue]);
 
   useEffect(() => {
-    if (value !== prevValue) {
+    if (!isReadOnly && value !== prevValue) {
       const updateCount: number = maxLength - value?.length;
 
       setCount(updateCount);
@@ -60,10 +61,11 @@ function TextareaContents({
         <Textarea
           id={id}
           value={value}
-          className={cx('textarea', { 'auto-focus': autoFocus })}
+          className={cx('textarea', { 'auto-focus': autoFocus, disable: isReadOnly })}
           placeholder={placeholder}
           maxLength={maxLength}
           autoFocus={autoFocus}
+          readOnly={isReadOnly}
           onChange={onChange}
         />
         <div className={cx('count-container')}>

@@ -29,20 +29,26 @@ const InputList = () => {
   return (
     <div className={cx('input-list-container')}>
       {textareaList.length > 0 &&
-        textareaList.map((data, key) => {
-          return (
-            <TextareaContents
-              key={key}
-              id={data?.id}
-              value={data?.value}
-              placeholder={data?.placeholder}
-              maxLength={data?.maxLength}
-              autoFocus={data?.autoFocus}
-              onChange={onChangeTextarea}
-              isBtn={data?.isBtn}
-            />
-          );
-        })}
+        textareaList.map(
+          (
+            { id, value, placeholder, maxLength, autoFocus, isBtn, isReadOnly }: ITextareaData,
+            key: number,
+          ): JSX.Element => {
+            return (
+              <TextareaContents
+                key={key}
+                id={id}
+                value={value}
+                placeholder={placeholder}
+                maxLength={maxLength}
+                autoFocus={autoFocus}
+                onChange={onChangeTextarea}
+                isBtn={isBtn}
+                isReadOnly={isReadOnly}
+              />
+            );
+          },
+        )}
     </div>
   );
 };
