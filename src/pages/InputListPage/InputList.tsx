@@ -14,6 +14,18 @@ const InputList = () => {
       placeholder: '입력',
       maxLength: 500,
       autoFocus: false,
+      isBtn: false,
+      onChange: (e) => {
+        setSelectedValue(e.target);
+      },
+    },
+    {
+      id: '2',
+      value: '입력중.. 또는 내용 변경 시',
+      placeholder: '입력',
+      maxLength: 500,
+      autoFocus: true,
+      isBtn: true,
       onChange: (e) => {
         setSelectedValue(e.target);
       },
@@ -44,6 +56,7 @@ const InputList = () => {
               autoFocus={data?.autoFocus}
               onChange={data?.onChange}
               className={cx('textarea')}
+              isBtn={data?.isBtn}
             />
           );
         })}

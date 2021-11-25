@@ -5,10 +5,12 @@ import styles from './Count.module.scss';
 
 const cx = classNames.bind(styles);
 
-type TCountProps = {};
+type TCountProps = {
+  count?: number;
+};
 
-function Count({}: TCountProps): JSX.Element {
-  return <div className={cx('count-container')}>500</div>;
+function Count({ count }: TCountProps): JSX.Element {
+  return <div className={cx('count')}>{count}</div>;
 }
 
 export default Count;

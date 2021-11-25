@@ -1,0 +1,56 @@
+@import '../../variables.scss';
+
+.textarea-contents-container {
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+
+  .contents-container {
+    position: relative;
+    width: 85%;
+
+    &.all {
+      width: 100%;
+    }
+
+    .textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+      color: $gray50;
+      background-color: transparent;
+      border: 1px solid $deep_gray;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    .count-container {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      font-size: 11px;
+      color: $gray50;
+    }
+  }
+
+  .btn-container {
+    margin-left: 5px;
+    width: 15%;
+    min-height: 150px;
+
+    &.none {
+      display: none;
+    }
+
+    .btn {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: 1px solid $gray50;
+      border-radius: 5px;
+      background-color: $white;
+    }
+  }
+}
