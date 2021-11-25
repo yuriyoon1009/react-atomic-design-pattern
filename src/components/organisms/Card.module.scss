@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.card-container {
+  margin-left: 20px;
+  max-width: 220px;
+  box-sizing: border-box;
+  border: 1px solid $deep_gray;
+  background-color: $gray;
+
+  img {
+    width: 100%;
+  }
+
+  &.mobile {
+    display: flex;
+    flex-direction: row;
+    max-width: 400px;
+  }
+}

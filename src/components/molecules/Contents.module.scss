@@ -1,0 +1,48 @@
+@import '../../variables.scss';
+
+.contents-container {
+  .label {
+    padding: 10px;
+    color: $gray50;
+    font-size: 11px;
+  }
+
+  .title {
+    padding: 10px;
+  }
+
+  .text-container {
+    padding: 30px 10px 10px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: row;
+
+    .highlight {
+      color: $red;
+      margin-right: 10px;
+    }
+
+    .cross-out {
+      text-decoration: line-through;
+    }
+  }
+
+  .circle-container {
+    padding: 10px 0;
+    border-top: 1px solid $gray50;
+    display: flex;
+    flex-direction: row;
+
+    &.none {
+      display: none;
+    }
+  }
+
+  .detail-container {
+    padding: 0 10px 10px;
+    font-size: 11px;
+    &.none {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  border: 1px solid $gray50;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 8px;
+
+  &.first-order {
+    margin-left: 10px;
+  }
+
+  &.is-checked {
+    background-color: $deep_alive_orange70;
+  }
+}
