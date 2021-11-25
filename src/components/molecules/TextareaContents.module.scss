@@ -51,6 +51,11 @@
       border: 1px solid $gray50;
       border-radius: 5px;
       background-color: $white;
+
+      &.active {
+        color: $blue100;
+        border-color: $blue100;
+      }
     }
   }
 }

@@ -30,14 +30,29 @@ function TextareaContents({
   onChange,
 }: TTextareaContentsProps): JSX.Element {
   const [count, setCount] = useState<number>(maxLength);
+  const [isActive, setActive] = useState<boolean>(false);
+  const [initValue, setInitValue] = useState<string>(null);
   const prevValue: string = usePrevious<string>(value);
+
+  useEffect(() => {
+    if (!(prevValue || initValue) && value) {
+      setInitValue(value);
+    }
+  }, [value, prevValue, initValue, setInitValue]);
 
   useEffect(() => {
     if (value !== prevValue) {
       const updateCount: number = maxLength - value?.length;
+
       setCount(updateCount);
     }
-  }, [value, prevValue, setCount, maxLength]);
+
+    if (initValue && value !== prevValue) {
+      const updateActive: boolean = initValue !== value;
+
+      setActive(updateActive);
+    }
+  }, [value, prevValue, maxLength, initValue, setActive, setCount]);
 
   return (
     <div className={cx('textarea-contents-container')}>
@@ -58,7 +73,7 @@ function TextareaContents({
 
       <div className={cx('btn-container', { none: !isBtn })}>
         <Button
-          className={cx('btn')}
+          className={cx('btn', { active: isActive })}
           onClick={() => {
             console.log('save');
           }}

@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface TTextareaProps {
   id?: string;
   className?: string;

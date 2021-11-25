@@ -33,7 +33,7 @@ const InputList = () => {
   ]);
 
   const setSelectedValue = ({ value, id }) => {
-    let updateTextareaList = textareaList.map((data, key) => {
+    const updateTextareaList = textareaList.map((data, key) => {
       if (data?.id !== id) return data;
 
       return Object.assign(data, { value });
