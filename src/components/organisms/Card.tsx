@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './Card.module.scss';
@@ -13,6 +12,7 @@ type TCardProps = {
   alt: string;
   label: string;
   title: string;
+  subTitle: string;
   highlight: string;
   crossOut: string;
   isCrossOut: boolean;
@@ -29,6 +29,7 @@ function Card({
   alt,
   label,
   title,
+  subTitle,
   highlight,
   crossOut,
   isCrossOut,
@@ -48,8 +49,10 @@ function Card({
         <TextContents
           label={label}
           title={title}
+          subTitle={subTitle}
           highlight={highlight}
           crossOut={crossOut}
+          isMobile={isMobile}
           isCrossOut={isCrossOut}
           count={count}
           text={text}

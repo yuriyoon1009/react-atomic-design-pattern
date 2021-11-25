@@ -1,6 +1,7 @@
 export interface ICardData {
   label: string;
   title: string;
+  subTitle?: string;
   highlight: string;
   src: string;
   crossOut: string;

@@ -53,7 +53,7 @@ function TextareaContents({
 
       setActive(updateActive);
     }
-  }, [value, prevValue, maxLength, initValue, setActive, setCount]);
+  }, [value, prevValue, maxLength, initValue, isReadOnly, setActive, setCount]);
 
   return (
     <div className={cx('textarea-contents-container')}>

@@ -18,7 +18,19 @@ const CardList = () => {
       {cardList.length > 0 &&
         cardList.map(
           (
-            { src, label, title, highlight, isCrossOut, crossOut, cardCount, detail, isMobile, className }: ICardData,
+            {
+              src,
+              label,
+              title,
+              subTitle,
+              highlight,
+              isCrossOut,
+              crossOut,
+              cardCount,
+              detail,
+              isMobile,
+              className,
+            }: ICardData,
             key: number,
           ): JSX.Element => {
             return (
@@ -28,6 +40,7 @@ const CardList = () => {
                 alt={label}
                 label={label}
                 title={title}
+                subTitle={subTitle}
                 highlight={highlight}
                 crossOut={crossOut}
                 isCrossOut={isCrossOut}

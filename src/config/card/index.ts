@@ -6,6 +6,7 @@ export const CARD_LIST: ICardData[] = [
   {
     label: 'Card_Label',
     title: 'Card Title',
+    subTitle: '',
     highlight: 'Highlight',
     src: CARD_IMG,
     crossOut: 'cross out',
@@ -18,6 +19,7 @@ export const CARD_LIST: ICardData[] = [
   {
     label: 'Card_Label',
     title: 'Card Title',
+    subTitle: '',
     highlight: 'Highlight',
     src: CARD_IMG,
     crossOut: 'cross out',
@@ -30,6 +32,7 @@ export const CARD_LIST: ICardData[] = [
   {
     label: 'Card_Label',
     title: 'Card Title',
+    subTitle: '',
     highlight: 'Highlight',
     src: CARD_IMG,
     crossOut: 'cross out',
@@ -41,14 +44,16 @@ export const CARD_LIST: ICardData[] = [
   },
   {
     label: 'Card_Label',
-    title: 'Card Title',
-    highlight: 'Highlight',
+    title: 'idusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBest',
+    subTitle: 'John Doe',
+    highlight: '',
     src: CARD_IMG,
-    crossOut: 'cross out',
+    crossOut: '',
     isCrossOut: false,
     isMobile: true,
     cardCount: 3,
-    detail: 'idusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBest',
+    detail:
+      'idusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBest',
     className: 'pre',
   },
 ];

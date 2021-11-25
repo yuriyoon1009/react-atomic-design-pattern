@@ -12,6 +12,7 @@ type TTextContentsProps = {
   title?: string;
   subTitle?: string;
   isCrossOut?: boolean;
+  isMobile?: boolean;
   crossOut?: string;
   highlight?: string;
   count?: number;
@@ -22,7 +23,9 @@ type TTextContentsProps = {
 function TextContents({
   label,
   title,
+  subTitle,
   crossOut,
+  isMobile,
   isCrossOut,
   highlight,
   count,
@@ -33,7 +36,7 @@ function TextContents({
   const [circleList] = useState<number[]>(Array.from({ length: circleCount }, (v, i) => i));
 
   return (
-    <div className={cx('contents-container')}>
+    <div className={cx('contents-container', { mobile: isMobile })}>
       <label className={cx('label')}>{label}</label>
       <h4 className={cx('title')}>{title}</h4>
       <div className={cx('text-container')}>
@@ -48,6 +51,7 @@ function TextContents({
 
             return <Circle key={key} isFirstOrder={isFirstOrder} isChecked={isChecked} />;
           })}
+        <span className={cx({ none: !isMobile })}>{subTitle}</span>
       </div>
       <div className={cx('detail-container', { none: !text })}>
         <Pre className={cx(className)}>{text}</Pre>
