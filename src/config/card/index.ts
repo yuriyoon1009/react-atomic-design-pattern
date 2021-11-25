@@ -13,6 +13,7 @@ export const CARD_LIST: ICardData[] = [
     isMobile: false,
     cardCount: 3,
     detail: 'idusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBest',
+    className: 'pre',
   },
   {
     label: 'Card_Label',
@@ -24,6 +25,7 @@ export const CARD_LIST: ICardData[] = [
     isMobile: false,
     cardCount: 3,
     detail: '',
+    className: 'pre',
   },
   {
     label: 'Card_Label',
@@ -35,6 +37,7 @@ export const CARD_LIST: ICardData[] = [
     isMobile: false,
     cardCount: 0,
     detail: '',
+    className: 'pre',
   },
   {
     label: 'Card_Label',
@@ -46,5 +49,6 @@ export const CARD_LIST: ICardData[] = [
     isMobile: true,
     cardCount: 3,
     detail: 'idusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBestidusIsTheBest',
+    className: 'pre',
   },
 ];

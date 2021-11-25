@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './Card.module.scss';
 
 import { Img } from 'components/atoms';
-import { Contents } from 'components/molecules';
+import { TextContents } from 'components/molecules';
 
 const cx = classNames.bind(styles);
 
@@ -19,6 +19,7 @@ type TCardProps = {
   isMobile: boolean;
   count: number;
   text: string;
+  className: string;
   imgOnLoad?: () => void;
   imgOnError?: () => void;
 };
@@ -34,6 +35,7 @@ function Card({
   isMobile,
   count,
   text,
+  className,
   imgOnLoad,
   imgOnError,
 }: TCardProps): JSX.Element {
@@ -43,7 +45,7 @@ function Card({
         <Img src={src} alt={alt} onLoad={imgOnLoad} onError={imgOnError} />
       </div>
       <div className={cx('contents-container')}>
-        <Contents
+        <TextContents
           label={label}
           title={title}
           highlight={highlight}
@@ -51,6 +53,7 @@ function Card({
           isCrossOut={isCrossOut}
           count={count}
           text={text}
+          className={className}
         />
       </div>
     </div>

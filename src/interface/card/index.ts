@@ -8,4 +8,5 @@ export interface ICardData {
   isMobile: boolean;
   cardCount: number;
   detail: string;
+  className: string;
 }

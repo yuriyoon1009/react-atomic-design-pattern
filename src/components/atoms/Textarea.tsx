@@ -7,7 +7,7 @@ interface TTextareaProps {
   placeholder?: string;
   maxLength?: number;
   autoFocus?: boolean;
-  onChange?: () => void;
+  onChange?: (e: any) => void;
 }
 
 function Textarea({ id, value, placeholder, maxLength, autoFocus, className, onChange }: TTextareaProps) {

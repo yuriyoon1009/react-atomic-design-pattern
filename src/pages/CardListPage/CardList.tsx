@@ -30,6 +30,7 @@ const CardList = () => {
               count={data?.cardCount}
               text={data?.detail}
               isMobile={data?.isMobile}
+              className={data?.className}
             />
           );
         })}

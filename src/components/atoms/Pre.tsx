@@ -1,10 +1,4 @@
 import React, { forwardRef, Ref } from 'react';
-import classNames from 'classnames/bind';
-
-import styles from './Pre.module.scss';
-
-// eslint-disable-next-line
-const cx = classNames.bind(styles);
 
 type TPre = {
   children?: React.ReactNode;

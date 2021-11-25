@@ -1,3 +1,4 @@
-import Contents from './Contents';
+import TextContents from './TextContents';
+import TextareaContents from './TextareaContents';
 
-export { Contents };
+export { TextContents, TextareaContents };

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './Contents.module.scss';
+import styles from './TextContents.module.scss';
 
 import { Pre, Circle } from 'components/atoms';
 
 const cx = classNames.bind(styles);
 
-type TContentsProps = {
+type TTextContentsProps = {
   label?: string;
   title?: string;
   subTitle?: string;
@@ -16,9 +16,19 @@ type TContentsProps = {
   highlight?: string;
   count?: number;
   text?: string;
+  className?: string;
 };
 
-function Contents({ label, title, crossOut, isCrossOut, highlight, count, text }: TContentsProps): JSX.Element {
+function TextContents({
+  label,
+  title,
+  crossOut,
+  isCrossOut,
+  highlight,
+  count,
+  text,
+  className,
+}: TTextContentsProps): JSX.Element {
   const [circleCount] = useState<number>(5);
   const [circleList] = useState<number[]>(Array.from({ length: circleCount }, (v, i) => i));
 
@@ -40,10 +50,10 @@ function Contents({ label, title, crossOut, isCrossOut, highlight, count, text }
           })}
       </div>
       <div className={cx('detail-container', { none: !text })}>
-        <Pre>{text}</Pre>
+        <Pre className={cx(className)}>{text}</Pre>
       </div>
     </div>
   );
 }
 
-export default Contents;
+export default TextContents;
